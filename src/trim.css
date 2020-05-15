@@ -155,7 +155,66 @@ html, body {
 
 }
 
-/* Margin, Padding, Font size, centering */
+/* Margin, Padding, Grid, Font size, centering */
+
+.grid { display: grid; }
+
+.grid-h-center { align-items: center; }
+.grid-v-center { justify-items: center; }
+.grid-h-end { justify-items: end; }
+.grid-v-end { align-items: end; }
+
+.grid-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-5 { grid-template-columns: repeat(5, 1fr); }
+.grid-6 { grid-template-columns: repeat(6, 1fr); }
+.grid-7 { grid-template-columns: repeat(7, 1fr); }
+.grid-8 { grid-template-columns: repeat(8, 1fr); }
+.grid-9 { grid-template-columns: repeat(9, 1fr); }
+.grid-10 { grid-template-columns: repeat(10, 1fr); }
+
+.gap-0p1 { grid-gap: 0.1rem; }
+.gap-0p2 { grid-gap: 0.2rem; }
+.gap-0p3 { grid-gap: 0.3rem; }
+.gap-0p4 { grid-gap: 0.4rem; }
+.gap-0p5 { grid-gap: 0.5rem; }
+.gap-0p6 { grid-gap: 0.6rem; }
+.gap-0p7 { grid-gap: 0.7rem; }
+.gap-0p8 { grid-gap: 0.8rem; }
+.gap-0p9 { grid-gap: 0.9rem; }
+.gap-1 { grid-gap: 1rem; }
+.gap-1p1 { grid-gap: 1.1rem; }
+.gap-1p2 { grid-gap: 1.2rem; }
+.gap-1p3 { grid-gap: 1.3rem; }
+.gap-1p4 { grid-gap: 1.4rem; }
+.gap-1p5 { grid-gap: 1.5rem; }
+.gap-1p6 { grid-gap: 1.6rem; }
+.gap-1p7 { grid-gap: 1.7rem; }
+.gap-1p8 { grid-gap: 1.8rem; }
+.gap-1p9 { grid-gap: 1.9rem; }
+.gap-2 { grid-gap: 2rem; }
+.gap-2p1 { grid-gap: 2.1rem; }
+.gap-2p2 { grid-gap: 2.2rem; }
+.gap-2p3 { grid-gap: 2.3rem; }
+.gap-2p4 { grid-gap: 2.4rem; }
+.gap-2p5 { grid-gap: 2.5rem; }
+.gap-2p6 { grid-gap: 2.6rem; }
+.gap-2p7 { grid-gap: 2.7rem; }
+.gap-2p8 { grid-gap: 2.8rem; }
+.gap-2p9 { grid-gap: 2.9rem; }
+.gap-3 { grid-gap: 3rem; }
+.gap-3p1 { grid-gap: 3.1rem; }
+.gap-3p2 { grid-gap: 3.2rem; }
+.gap-3p3 { grid-gap: 3.3rem; }
+.gap-3p4 { grid-gap: 3.4rem; }
+.gap-3p5 { grid-gap: 3.5rem; }
+.gap-3p6 { grid-gap: 3.6rem; }
+.gap-3p7 { grid-gap: 3.7rem; }
+.gap-3p8 { grid-gap: 3.8rem; }
+.gap-3p9 { grid-gap: 3.9rem; }
+.gap-4 { grid-gap: 4rem; }
 
 .auto-center { 
   margin-left: auto;
