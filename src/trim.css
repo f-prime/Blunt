@@ -23,14 +23,16 @@ html, body {
 
 @media only screen and (max-width: 550px) {
   html {
-    font-size: 16px;
+    font-size: 12px;
   }
 
-  .is-hidden-mobile { display: none !important; }
+  .is-hidden-sm { display: none !important; }
 
   .container {
     width: 95%;
   }
+
+  .h-full { height: 100%; }
 
   .row {
     width: 100%;
@@ -54,10 +56,12 @@ html, body {
 
 @media only screen and (min-width: 551px) and (max-width: 900px) {
   html {
-    font-size: 18px; 
+    font-size: 13px; 
   }
 
-  .is-hidden-mobile { display: none !important; }
+  .is-hidden-sm { display: none !important; }
+  
+  .h-full { height: 100%; }
 
   .container {
     width: 90%;
@@ -83,12 +87,14 @@ html, body {
   .space-around { justify-content: space-around; }
 }
 
-@media only screen and (min-width: 901px) and (max-width: 1000px) {
+@media only screen and (min-width: 901px) and (max-width: 1500px) {
   html {
-    font-size: 19px;
+    font-size: 14px;
   }
 
-  .is-hidden-desktop { display: none !important; }
+  .is-hidden-md { display: none !important; }
+
+  .h-full { height: 100vh; }
 
   .container {
     width: 85%;
@@ -115,13 +121,15 @@ html, body {
 
 }
 
-@media only screen and (min-width: 1001px) {
+@media only screen and (min-width: 1501px) {
   html {
-    font-size: 20px;
+    font-size: 16px;
   }
 
-  .is-hidden-desktop { display: none !important; }
+  .is-hidden-lg { display: none !important; }
 
+  .h-full { height: 100vh; }
+  
   .container {
     width: 80%;
   }
