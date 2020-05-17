@@ -7,13 +7,12 @@ Blunt doesn't have any opinions on how your applications should look. It only pr
 # Why another CSS framework...?
 
 There seem to be hundreds of these things out there. So why bother with another one? 
-Well, I was sick of the other options. Most are overly opinionated and result in spending time
-fighting the framework instead of it helping you. I have tried so many different ones. Some do too
-much, others do too little. I needed some middle ground that worked for _specifically_ what I wanted which is
-write as little CSS as possible for positioning, and reserve what I do write for styling that is specific to my
-application.
+Well, I was sick of fighting with the other options. Most are overly opinionated and result in spending time
+fighting the framework instead of it boosting productivity. I have tried so many different ones. Some do too
+much, others do too little. I needed some middle ground that worked for _specifically_ what I wanted. I don't want to write any CSS
+that does positioning elements. I want to write CSS that only does the _styling_ of my elements (e.g. text color, borders, background colors, etc).
 
-That means that I never want to write `display: flex;` or `display: grid;` but I have no problem writing `color: var(--off-white);`
+That means that I never want to write `display: flex;` or `display: grid;` but I have no problem writing `color: var(--off-white);`.
 
 I also never want to write another `@media` query again. I want all of my positioning code to get done within the HTML itself.
 
