@@ -34,6 +34,12 @@ As a result, Blunt does the following:
 
 It does nothing else.
 
+# Getting Started
+
+1. Clone this repo
+2. Move `src/blunt.css` to wherever you need it in your project
+3. Include it with `<link rel='stylesheet' type='text/css' href='/path/to/blunt.css'>`
+
 # Example
 
 Let's create a simple responsive card using Blunt.
