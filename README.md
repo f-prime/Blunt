@@ -90,7 +90,7 @@ Small
 
 # Classes
 
-Blunt size and alignment classes use the following structure:
+Blunt size classes use the following structure:
 
 `{screen}-{class}-{number}`
 
