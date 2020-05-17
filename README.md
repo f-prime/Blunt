@@ -115,19 +115,19 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `container` - Responsive container class
 
-`grid` - Sets display of element to `grid`
+`{size}-grid` - Sets display of element to `grid`
 
-`grid-h-center` - Center aligns grid items horizontally 
+`{size}-grid-h-center` - Center aligns grid items horizontally 
 
-`grid-v-center` - Center aligns grid items vertically
+`{size}-grid-v-center` - Center aligns grid items vertically
 
-`grid-h-end` - Aligns grid items to their horizontal end
+`{size}-grid-h-end` - Aligns grid items to their horizontal end
 
-`grid-v-end` - Aligns grid items to their vertical end
+`{size}-grid-v-end` - Aligns grid items to their vertical end
 
-`gird-{1-10}` - Defines number of columns in grid (between 1 and 10 columns)
+`{size}-grid-{1-10}` - Defines number of columns in grid (between 1 and 10 columns)
 
-`gap-{0-4}p{1-9}` - Defines the grid gap between 0.1 and 4 rem
+`{size}-gap-{0-4}p{1-9}` - Defines the grid gap between 0.1 and 4 rem
 
 `{size}-auto-center` - Does `margin-left: auto; margin-right: auto;`
 
