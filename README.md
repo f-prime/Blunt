@@ -95,10 +95,6 @@ Small
 
 # Classes
 
-Blunt size classes use the following structure:
-
-`{screen}-{class}-{number}`
-
 Blunt supports three screen sizes:
 
 1. `sm` which has a max width of 900px
