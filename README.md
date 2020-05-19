@@ -154,3 +154,5 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 `{size}-text-{center, left, right}` - `text-center` will center text
 
 `{size}-hidden` - `lg-hidden` will hide an element on large screens
+
+`{size}-px{w,h}-{0-1000}` - `lg-pxw-300` will resolve to `width: 300px` on large screens `md-pxh-200` will resolve to `height: 200px` on medium screens.
