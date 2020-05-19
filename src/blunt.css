@@ -28,6 +28,10 @@ html, body {
 .sticky { position: sticky; }
 .relative { position: relative; } 
 
+.top { top: 0vh; }
+.left { left: 0vw; }
+.right { right: 0vw; }
+.bottom { bottom: 0vw; }
 .top { top: 1vh; }
 .left { left: 1vw; }
 .right { right: 1vw; }
@@ -4433,6 +4437,10 @@ html, body {
   .sm-sticky { position: sticky; }
   .sm-relative { position: relative; } 
 
+  .sm-top { top: 0vh; }
+  .sm-left { left: 0vw; }
+  .sm-right { right: 0vw; }
+  .sm-bottom { bottom: 0vw; }
   .sm-top { top: 1vh; }
   .sm-left { left: 1vw; }
   .sm-right { right: 1vw; }
@@ -8840,6 +8848,10 @@ html, body {
   .md-sticky { position: sticky; }
   .md-relative { position: relative; } 
 
+  .md-top { top: 0vh; }
+  .md-left { left: 0vw; }
+  .md-right { right: 0vw; }
+  .md-bottom { bottom: 0vw; }
   .md-top { top: 1vh; }
   .md-left { left: 1vw; }
   .md-right { right: 1vw; }
@@ -13232,6 +13244,10 @@ html, body {
   .lg-sticky { position: sticky; }
   .lg-relative { position: relative; } 
 
+  .lg-top { top: 0vh; }
+  .lg-left { left: 0vw; }
+  .lg-right { right: 0vw; }
+  .lg-bottom { bottom: 0vw; }
   .lg-top { top: 1vh; }
   .lg-left { left: 1vw; }
   .lg-right { right: 1vw; }
