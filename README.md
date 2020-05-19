@@ -156,3 +156,7 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 `{size}-hidden` - `lg-hidden` will hide an element on large screens
 
 `{size}-px{w,h}-{0-1000}` - `lg-pxw-300` will resolve to `width: 300px` on large screens `md-pxh-200` will resolve to `height: 200px` on medium screens.
+
+`{size}-{absolute, static, sticky, fixed}` - `lg-fixed` will resolve to `position: fixed;` for large screens 
+
+`{size}-{top, left, right, bottom}-{1-100}` - `md-top-5` will resolve to `top:5vh;` for medium screens 
