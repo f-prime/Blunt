@@ -1,5 +1,7 @@
 # Blunt
 
+[![Join the chat at https://gitter.im/dotnet/coreclr](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Blunt-css)
+
 A CSS framework without all the fluff. 
 
 Blunt doesn't have any opinions on how your applications should look. It only provides helper classes to make positioning and responsive design easier.
