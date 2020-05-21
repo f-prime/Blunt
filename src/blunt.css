@@ -435,7 +435,7 @@ html, body {
 
 .grid { display: grid; }
 
-.grid-h-center { align-items: center; }
+.grid-v-center { align-items: center; }
 .grid-h-center { justify-items: center; }
 .grid-h-end { justify-items: end; }
 .grid-v-end { align-items: end; }
