@@ -44,7 +44,7 @@ It does nothing else.
 
 Let's create a simple responsive card using Blunt.
 
-```
+```html
 <div class="container auto-center h-100 row v-center h-center">
   <div class="card lg-w-30 md-w-40 sm-w-90 pt-2 pb-2 pl-2 pr-2">
     <div class="sm-col md-row lg-row md-v-center lg-v-center">
