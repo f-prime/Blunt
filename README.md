@@ -18,7 +18,7 @@ That means that I never want to write `display: flex;` or `display: grid;` but I
 
 I also never want to write another `@media` query again. I want all of my positioning code to get done within the HTML itself.
 
-I also dont want something that does more than this. I don't want to have to install an NPM package to get what I need.
+I also don't want something that does more than this. I don't want to have to install an NPM package to get what I need.
 I just want to include the CSS file and be done with it.
 
 As a result, Blunt does the following:
