@@ -1,5 +1,7 @@
 # Blunt
 
+[![Join the chat at https://gitter.im/dotnet/coreclr](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Blunt-css)
+
 A CSS framework without all the fluff. 
 
 Blunt doesn't have any opinions on how your applications should look. It only provides helper classes to make positioning and responsive design easier.
@@ -16,7 +18,7 @@ That means that I never want to write `display: flex;` or `display: grid;` but I
 
 I also never want to write another `@media` query again. I want all of my positioning code to get done within the HTML itself.
 
-I also dont want something that does more than this. I don't want to have to install an NPM package to get what I need.
+I also don't want something that does more than this. I don't want to have to install an NPM package to get what I need.
 I just want to include the CSS file and be done with it.
 
 As a result, Blunt does the following:
@@ -46,7 +48,7 @@ Simply add the following line to your HTML file.
 
 Let's create a simple responsive card using Blunt.
 
-```
+```html
 <div class="container auto-center h-100 row v-center h-center">
   <div class="card lg-w-30 md-w-40 sm-w-90 pt-2 pb-2 pl-2 pr-2">
     <div class="sm-col md-row lg-row md-v-center lg-v-center">
