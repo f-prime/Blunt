@@ -36,9 +36,11 @@ It does nothing else.
 
 # Getting Started
 
-1. Clone this repo
-2. Move `src/blunt.css` to wherever you need it in your project
-3. Include it with `<link rel='stylesheet' type='text/css' href='/path/to/blunt.css'>`
+Simply add the following line to your HTML file.
+
+```
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/f-prime/blunt/src/blunt.css">
+```
 
 # Example
 

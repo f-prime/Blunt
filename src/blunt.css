@@ -1,22 +1,3 @@
-/*
- *
- * Problem: 
- *  
- * Styling on different screen sizes is a massive pain in the ass. 
- * All these CSS frameworks changes things about elements that I don't want changed. 
- * I just want something that gives me the following:
- *
- * 1. A responsive container
- * 2. A bunch of CSS classes for using semantic HTML for styling instead of a bunch of random CSS
- *  a. Margin classes
- *  b. Padding classes
- *  c. Font classes
- * 3. Make it easy to center things... this really shouldn't be as hard as it is
- * 4. Rows and columns and make it easy to align things in thise columns
- * 5. Showing and hiding shit on different screen sizes\
- * 6. Size specific aligning classes (sm-ml, md-pd, lg-w, etc)
- */
-
 html, body {
   margin: 0;
   padding: 0;
