@@ -41,7 +41,7 @@ It does nothing else.
 Simply add the following line to your HTML file.
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/f-prime/blunt/src/blunt.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/f-prime/blunt/src/blunt.min.css">
 ```
 
 # Example
