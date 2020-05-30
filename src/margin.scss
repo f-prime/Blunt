@@ -1,0 +1,31 @@
+@use 'sass:math';
+
+$margin-max: 20;
+$margin-increment: 0.1;
+$margin-start: 0;
+
+@mixin marginGen($prefix, $number, $decimal, $val) {
+  @if($decimal > 0) {
+    .#{$prefix}mt-#{$number}p#{$decimal} { margin-top: #{$val}vh; }
+    .#{$prefix}mb-#{$number}p#{$decimal} { margin-bottom: #{$val}vh; }
+    .#{$prefix}ml-#{$number}p#{$decimal} { margin-left: #{$val}vw; }
+    .#{$prefix}mr-#{$number}p#{$decimal} { margin-right: #{$val}vw; }
+    .#{$prefix}m-#{$number}p#{$decimal} { margin: #{$val}rem; }
+  } @else {
+    .#{$prefix}mt-#{$number} { margin-top: #{$val}vh; }
+    .#{$prefix}mb-#{$number} { margin-bottom: #{$val}vh; }
+    .#{$prefix}ml-#{$number} { margin-left: #{$val}vw; }
+    .#{$prefix}mr-#{$number} { margin-right: #{$val}vw; }
+    .#{$prefix}m-#{$number} { margin: #{$val}rem; }
+  }
+}
+
+@mixin margin($prefix) {
+  @while($margin-start <= $margin-max) {
+    $decimal: $margin-start * 10 % 10;
+    $number: math.floor($margin-start);
+
+    @include marginGen($prefix, $number, $decimal, $margin-start);
+    $margin-start: $margin-start + $margin-increment;
+  }
+}

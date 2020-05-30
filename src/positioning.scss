@@ -1,0 +1,29 @@
+@use 'sass:math';
+
+$positioning-max: 100;
+$positioning-increment: 0.5;
+$positioning-start: 0;
+
+@mixin positioningGen($prefix, $number, $decimal, $val) {
+  @if($decimal > 0) {
+    .#{$prefix}top-#{$number}p#{$decimal} { top: #{$val}vh; }
+    .#{$prefix}bottom-#{$number}p#{$decimal} { bottom: #{$val}vh; }
+    .#{$prefix}left-#{$number}p#{$decimal} { left: #{$val}vw; }
+    .#{$prefix}right-#{$number}p#{$decimal} { right: #{$val}vw; }
+  } @else {
+    .#{$prefix}top-#{$number} { top: #{$val}vh; }
+    .#{$prefix}bottom-#{$number} { bottom: #{$val}vh; }
+    .#{$prefix}left-#{$number} { left: #{$val}vw; }
+    .#{$prefix}right-#{$number} { right: #{$val}vw; }
+  }
+}
+
+@mixin positioning($prefix) {
+  @while($positioning-start <= $positioning-max) {
+    $decimal: $positioning-start * 10 % 10;
+    $number: math.floor($positioning-start);
+
+    @include positioningGen($prefix, $number, $decimal, $positioning-start);
+    $positioning-start: $positioning-start + $positioning-increment;
+  }
+}

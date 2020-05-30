@@ -1,0 +1,40 @@
+@use 'sass:math';
+
+$height-percent-max: 100;
+$height-percent-increment: 0.5;
+$height-percent-start: 0;
+
+$height-max-px: 1000;
+$height-increment-px: 1;
+$height-start-px: 0;
+
+@mixin heightPxGen($prefix, $val) {
+  .#{$prefix}pxh-#{$val} { height: #{$val}px; }
+}
+
+@mixin heightPercentGen($prefix, $number, $decimal, $val) {
+  @if($decimal > 0) {
+    .#{$prefix}h-#{$number}p#{$decimal} { height: percentage($val / 100); }
+    .#{$prefix}vh-#{$number}p#{$decimal} { height: #{$val}vh; }
+  } @else {
+    .#{$prefix}h-#{$number} { height: percentage($val / 100); }
+    .#{$prefix}vh-#{$number} { height: #{$val}vh; }
+  }
+}
+
+@mixin heightPercent($prefix) {
+  @while($height-percent-start <= $height-percent-max) {
+    $decimal: $height-percent-start * 10 % 10;
+    $number: math.floor($height-percent-start);
+
+    @include heightPercentGen($prefix, $number, $decimal, $height-percent-start);
+    $height-percent-start: $height-percent-start + $height-percent-increment;
+  }
+}
+
+@mixin heightPx($prefix) {
+  @while($height-start-px <= $height-max-px) {
+    @include heightPxGen($prefix, $height-start-px);
+    $height-start-px: $height-start-px + $height-increment-px;
+  }
+}

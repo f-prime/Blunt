@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+$line-height-max: 6;
+$line-height-increment: 0.1;
+$line-height-start: 0;
+
+@mixin lineHeightGen($prefix, $number, $decimal, $val) {
+  @if($decimal > 0) {
+    .#{$prefix}lh-#{$number}p#{$decimal} { line-height: #{$val}rem; }
+  } @else {
+    .#{$prefix}lh-#{$number} { line-height: #{$val}rem; }
+  }
+}
+
+@mixin lineHeight($prefix) {
+  @while($line-height-start <= $line-height-max) {
+    $decimal: $line-height-start * 10 % 10;
+    $number: math.floor($line-height-start);
+
+    @include lineHeightGen($prefix, $number, $decimal, $line-height-start);
+    $line-height-start: $line-height-start + $line-height-increment;
+  }
+}

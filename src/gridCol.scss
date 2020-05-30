@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+$grid-col-max: 10;
+$grid-col-increment: 1;
+$grid-col-start: 0;
+
+@mixin gridColGen($prefix, $number) {
+  .#{$prefix}grid-#{$number} { grid-template-columns: repeat($number, 1fr); }
+}
+
+@mixin gridCol($prefix) {
+  @while($grid-col-start <= $grid-col-max) {
+    @include gridColGen($prefix, $grid-col-start);
+    $grid-col-start: $grid-col-start + $grid-col-increment;
+  }
+}

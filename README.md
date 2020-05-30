@@ -41,8 +41,14 @@ It does nothing else.
 Simply add the following line to your HTML file.
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/f-prime/blunt/src/blunt.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/f-prime/blunt/dist/blunt.min.css">
 ```
+
+# Building the CSS
+
+Blunt is written in SCSS. To generate the CSS code clone the repo and run the following command:
+
+`sass src/blunt.scss > blunt.css`
 
 # Example
 

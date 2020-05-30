@@ -1,0 +1,98 @@
+@use 'padding.scss' as padding;
+@use 'margin.scss' as margin;
+@use 'positioning.scss' as positioning;
+@use 'gridCol.scss' as gridCol;
+@use 'gridGap.scss' as gridGap;
+@use 'lineHeight.scss' as lineHeight;
+@use 'font.scss' as font;
+@use 'width.scss' as width;
+@use 'height.scss' as height;
+
+html, body { 
+  margin: 0;
+  padding: 0;
+}
+
+@mixin genCode($prefix) {
+  .#{$prefix}absolute { position: absolute; }
+  .#{$prefix}static { position: static; }
+  .#{$prefix}fixed { position: fixed; }
+  .#{$prefix}sticky { position: sticky; }
+  .#{$prefix}relative { position: relative; }
+
+  .#{$prefix}grid { display: grid; }
+
+  .#{$prefix}grid-v-center { align-items: center; }
+  .#{$prefix}grid-h-center { justify-items: center; }
+  .#{$prefix}grid-h-end { justify-items: end; }
+  .#{$prefix}grid-v-end { align-items: end; }
+
+  .#{$prefix}auto-center { 
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .#{$prefix}text-center { text-align: center; }
+  .#{$prefix}text-left { text-align: left; }
+  .#{$prefix}text-right { text-align: right; }
+
+  .#{$prefix}col { 
+    display: flex;
+    flex-direction: column; 
+  }
+
+  .#{$prefix}row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .#{$prefix}h-end { justify-content: flex-end; }
+  .#{$prefix}v-end { align-items: flex-end; }
+  .#{$prefix}v-center { align-items: center; }
+  .#{$prefix}h-center { justify-content: center; }
+  .#{$prefix}h-space-between { justify-content: space-between; }
+  .#{$prefix}h-space-around { justify-content: space-around; }
+  .#{$prefix}v-space-between { align-items: space-between; }
+  .#{$prefix}v-space-around { align-items: space-around; }
+  
+  @include padding.padding($prefix);
+  @include margin.margin($prefix);
+  @include positioning.positioning($prefix);
+  @include gridCol.gridCol($prefix);
+  @include gridGap.gridGap($prefix);
+  @include lineHeight.lineHeight($prefix);
+  @include font.font($prefix);
+  @include width.widthPercent($prefix);
+  @include width.widthPx($prefix);
+  @include height.heightPx($prefix);
+  @include height.heightPercent($prefix);
+}
+
+@include genCode(''); 
+
+
+@media only screen and (max-width: 900px) {
+  html { font-size: 13px; }
+  .sm-hidden { display: none !important; }
+  .container { width: 95% }
+  @include genCode('sm-');
+}
+
+@media only screen and (min-width: 551px) and (max-width: 900px) {
+  html { font-size: 13px; }
+  .container { width: 90%; }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1500px) {
+  html { font-size: 14px; }
+  .container { width: 85%; }
+  .md-hidden { display: none !important; }
+  @include genCode('md-');
+}
+
+@media only screen and (min-width: 1501px) {
+  html { font-size: 14px; }
+  .lg-hidden { display: none !important; }
+  .container { width: 80%; }
+  @include genCode('lg-');
+}

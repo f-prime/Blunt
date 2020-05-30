@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+$grid-gap-max: 8;
+$grid-gap-increment: 0.1;
+$grid-gap-start: 0;
+
+@mixin gridGapGen($prefix, $number, $decimal, $val) {
+  @if($decimal > 0) {
+    .#{$prefix}gap-#{$number}p#{$decimal} { grid-gap: #{$val}rem; }
+  } @else {
+    .#{$prefix}gap-#{$number} { grid-gap: #{$val}rem; }
+  }
+}
+
+@mixin gridGap($prefix) {
+  @while($grid-gap-start <= $grid-gap-max) {
+    $decimal: $grid-gap-start * 10 % 10;
+    $number: math.floor($grid-gap-start);
+
+    @include gridGapGen($prefix, $number, $decimal, $grid-gap-start);
+    $grid-gap-start: $grid-gap-start + $grid-gap-increment;
+  }
+}

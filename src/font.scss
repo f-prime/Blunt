@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+$font-max: 5;
+$font-increment: 0.1;
+$font-start: 0;
+
+@mixin fontGen($prefix, $number, $decimal, $val) {
+  @if($decimal > 0) {
+    .#{$prefix}font-#{$number}p#{$decimal} { font: #{$val}rem; }
+  } @else {
+    .#{$prefix}font-#{$number} { font: #{$val}rem; }
+  }
+}
+
+@mixin font($prefix) {
+  @while($font-start <= $font-max) {
+    $decimal: $font-start * 10 % 10;
+    $number: math.floor($font-start);
+
+    @include fontGen($prefix, $number, $decimal, $font-start);
+    $font-start: $font-start + $font-increment;
+  }
+}
