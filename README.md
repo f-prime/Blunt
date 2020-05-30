@@ -1,5 +1,3 @@
-![](logo.png)
-
 # Blunt
 
 [Join the Discord](https://discord.gg/EZJEwsP)
