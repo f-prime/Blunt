@@ -2,7 +2,7 @@
 
 # Blunt
 
-[![Join the chat at https://gitter.im/dotnet/coreclr](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Blunt-css)
+[Join the Discord](https://discord.gg/EZJEwsP)
 
 A CSS framework without all the fluff. 
 
@@ -143,7 +143,7 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-m{t,l,r,b}-{0-15}p{0-9}` - Margin class `sm-mt-3p3` will resolve to  `margin-top: 3.3vh` for the small screen size
 
-`{size}-p{t,l,r,b}-{0-15}p{0-9}` - Padding class `md-ml-3p3` will resolve to  `padding-left: 3.3vw` for the medium screen size
+`{size}-p{t,l,r,b}-{0-15}p{0-9}` - Padding class `md-pl-3p3` will resolve to  `padding-left: 3.3vw` for the medium screen size
 
 `{size}-lh-{0-4}p{0-9}` - Line height class `lg-lh-1p3` will resolve to `line-height: 1.3rem` for the large screen 
 
