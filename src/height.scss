@@ -1,8 +1,10 @@
 @use 'sass:math';
+@use 'sass:string';
 
 $height-percent-max: 100;
-$height-percent-increment: 0.5;
-$height-percent-start: 0;
+$height-percent-number: 0;
+$height-percent-decimal: 0;
+$height-percent-decimal-inc: 5;
 
 $height-max-px: 1000;
 $height-increment-px: 1;
@@ -12,26 +14,27 @@ $height-start-px: 0;
   .#{$prefix}pxh-#{$val} { height: #{$val}px; }
 }
 
-@mixin heightPercentGen($prefix, $number, $decimal, $val) {
+@mixin heightPercentGen($prefix, $number, $decimal) {
   @if($decimal > 0 and $decimal < 10){
-    .#{$prefix}h-#{$number}p#{$decimal} { height: percentage($val / 100); }
-    .#{$prefix}vh-#{$number}p#{$decimal} { height: #{$val}vh; }
-  } @else if($decimal == 10) {
-    .#{$prefix}h-#{$number + 1} { height: percentage($val / 100); }
-    .#{$prefix}vh-#{$number + 1} { height: #{$val}vh; }
+    .#{$prefix}h-#{$number}p#{$decimal} { height: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}vh-#{$number}p#{$decimal} { height: string.unquote("#{$number}.#{$decimal}vh"); }
   } @else {
-    .#{$prefix}h-0 { height: 0; }
-    .#{$prefix}vh-0 { height: 0; }
+    .#{$prefix}h-#{$number} { height: string.unquote("#{$number}%"); }
+    .#{$prefix}vh-#{$number} { height: string.unquote("#{$number}vh"); }
   }
 }
 
 @mixin heightPercent($prefix) {
-  @while($height-percent-start <= $height-percent-max) {
-    $decimal: $height-percent-start * 10 % 10;
-    $number: math.floor($height-percent-start);
+  @while($height-percent-number <= $height-percent-max) {
+    @include heightPercentGen($prefix, $height-percent-number, $height-percent-decimal);
+    @while($height-percent-decimal < 10 and $height-percent-decimal-inc > 0) {
+      $height-percent-decimal: $height-percent-decimal + $height-percent-decimal-inc;
+      @if($height-percent-decimal != 10) {
+        @include heightPercentGen($prefix, $height-percent-number, $height-percent-decimal);
+      }
+    }
 
-    @include heightPercentGen($prefix, $number, $decimal, $height-percent-start);
-    $height-percent-start: $height-percent-start + $height-percent-increment;
+    $height-percent-number: $height-percent-number + 1;
   }
 }
 

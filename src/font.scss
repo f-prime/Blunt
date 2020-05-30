@@ -1,25 +1,28 @@
-@use 'sass:math';
+@use 'sass:string';
 
 $font-max: 5;
-$font-increment: 0.1;
-$font-start: 0;
+$font-number: 0;
+$font-decimal: 0;
+$font-decimal-inc: 1;
 
-@mixin fontGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0 and $decimal < 10) {
-    .#{$prefix}font-#{$number}p#{$decimal} { font-size: #{$val}rem; }
-  } @else if($decimal == 10) {
-    .#{$prefix}font-#{$number + 1} { font-size: #{$val}rem; }
+@mixin fontGen($prefix, $number, $decimal) {
+  @if($decimal > 0) {
+    .#{$prefix}font-#{$number}p#{$decimal} { font-size: string.unquote("#{$number}.#{$decimal}rem"); }
   } @else {
-    .#{$prefix}font-0 { font-size: 0rem; }
+    .#{$prefix}font-#{$number} { font-size: #{$number}rem; }
   }
 }
 
 @mixin font($prefix) {
-  @while($font-start <= $font-max) {
-    $decimal: $font-start * 10 % 10;
-    $number: math.floor($font-start);
+  @while($font-number <= $font-max) {
+    @include fontGen($prefix, $font-number, $font-decimal);
+    @while($font-decimal < 10 and $font-decimal-inc > 0) {
+      $font-decimal: $font-decimal + $font-decimal-inc;
+      @if($font-decimal != 10) {
+        @include fontGen($prefix, $font-number, $font-decimal);
+      }
+    }
 
-    @include fontGen($prefix, $number, $decimal, $font-start);
-    $font-start: $font-start + $font-increment;
+    $font-number: $font-number + 1;
   }
 }

@@ -1,8 +1,10 @@
 @use 'sass:math';
+@use 'sass:string';
 
 $width-percent-max: 100;
-$width-percent-increment: 0.5;
-$width-percent-start: 0;
+$width-percent-number: 0;
+$width-percent-decimal: 0;
+$width-percent-decimal-inc: 5;
 
 $width-max-px: 1000;
 $width-increment-px: 1;
@@ -12,26 +14,27 @@ $width-start-px: 0;
   .#{$prefix}pxw-#{$val} { width: #{$val}px; }
 }
 
-@mixin widthPercentGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0 and $decimal < 10) {
-    .#{$prefix}w-#{$number}p#{$decimal} { width: percentage($val / 100); }
-    .#{$prefix}vw-#{$number}p#{$decimal} { width: #{$val}vw; }
-  } @else if($decimal == 10) {
-    .#{$prefix}w-#{$number + 1} { width: percentage($val / 100); }
-    .#{$prefix}vw-#{$number + 1} { width: #{$val}vw; }
+@mixin widthPercentGen($prefix, $number, $decimal) {
+  @if($decimal > 0 and $decimal < 10){
+    .#{$prefix}w-#{$number}p#{$decimal} { width: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}vw-#{$number}p#{$decimal} { width: string.unquote("#{$number}.#{$decimal}vw"); }
   } @else {
-    .#{$prefix}w-0 { width: 0; }
-    .#{$prefix}vw-0 { width: 0; }
+    .#{$prefix}w-#{$number} { width: string.unquote("#{$number}%"); }
+    .#{$prefix}vw-#{$number} { width: string.unquote("#{$number}vw"); }
   }
 }
 
 @mixin widthPercent($prefix) {
-  @while($width-percent-start <= $width-percent-max) {
-    $decimal: $width-percent-start * 10 % 10;
-    $number: math.floor($width-percent-start);
+  @while($width-percent-number <= $width-percent-max) {
+    @include widthPercentGen($prefix, $width-percent-number, $width-percent-decimal);
+    @while($width-percent-decimal < 10 and $width-percent-decimal-inc > 0) {
+      $width-percent-decimal: $width-percent-decimal + $width-percent-decimal-inc;
+      @if($width-percent-decimal != 10) {
+        @include widthPercentGen($prefix, $width-percent-number, $width-percent-decimal);
+      }
+    }
 
-    @include widthPercentGen($prefix, $number, $decimal, $width-percent-start);
-    $width-percent-start: $width-percent-start + $width-percent-increment;
+    $width-percent-number: $width-percent-number + 1;
   }
 }
 

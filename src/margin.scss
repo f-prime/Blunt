@@ -1,37 +1,36 @@
-@use 'sass:math';
+@use 'sass:string';
 
 $margin-max: 20;
-$margin-increment: 0.1;
-$margin-start: 0;
+$margin-number: 0;
+$margin-decimal: 0;
+$margin-decimal-inc: 1;
 
-@mixin marginGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0 and $decimal < 10) {
-    .#{$prefix}mt-#{$number}p#{$decimal} { margin-top: #{$val}vh; }
-    .#{$prefix}mb-#{$number}p#{$decimal} { margin-bottom: #{$val}vh; }
-    .#{$prefix}ml-#{$number}p#{$decimal} { margin-left: #{$val}vw; }
-    .#{$prefix}mr-#{$number}p#{$decimal} { margin-right: #{$val}vw; }
-    .#{$prefix}m-#{$number}p#{$decimal} { margin: #{$val}rem; }
-  } @else if($decimal == 10) {
-    .#{$prefix}mt-#{$number + 1} { margin-top: #{$val}vh; }
-    .#{$prefix}mb-#{$number + 1} { margin-bottom: #{$val}vh; }
-    .#{$prefix}ml-#{$number + 1} { margin-left: #{$val}vw; }
-    .#{$prefix}mr-#{$number + 1} { margin-right: #{$val}vw; }
-    .#{$prefix}m-#{$number + 1} { margin: #{$val}rem; }
+@mixin marginGen($prefix, $number, $decimal) {
+  @if($decimal > 0) {
+    .#{$prefix}mt-#{$number}p#{$decimal} { margin-top: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}mb-#{$number}p#{$decimal} { margin-bottom: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}ml-#{$number}p#{$decimal} { margin-left: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}mr-#{$number}p#{$decimal} { margin-right: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}m-#{$number}p#{$decimal} { margin: string.unquote("#{$number}.#{$decimal}rem"); }
   } @else {
-    .#{$prefix}mt-0 { margin-top: 0; }
-    .#{$prefix}mb-0 { margin-bottom: 0; }
-    .#{$prefix}ml-0 { margin-left: 0; }
-    .#{$prefix}mr-0 { margin-right: 0; }
-    .#{$prefix}m-0 { margin: 0; }
+    .#{$prefix}mt-#{$number} { margin-top: #{$number}vh; }
+    .#{$prefix}mb-#{$number} { margin-bottom: #{$number}vh; }
+    .#{$prefix}ml-#{$number} { margin-left: #{$number}vw; }
+    .#{$prefix}mr-#{$number} { margin-right: #{$number}vw; }
+    .#{$prefix}m-#{$number} { margin: #{$number}rem; }
   }
 }
 
 @mixin margin($prefix) {
-  @while($margin-start <= $margin-max) {
-    $decimal: $margin-start * 10 % 10;
-    $number: math.floor($margin-start);
+  @while($margin-number <= $margin-max) {
+    @include marginGen($prefix, $margin-number, $margin-decimal);
+    @while($margin-decimal < 10 and $margin-decimal-inc > 0) {
+      $margin-decimal: $margin-decimal + $margin-decimal-inc;
+      @if($margin-decimal != 10) {
+        @include marginGen($prefix, $margin-number, $margin-decimal);
+      }
+    }
 
-    @include marginGen($prefix, $number, $decimal, $margin-start);
-    $margin-start: $margin-start + $margin-increment;
+    $margin-number: $margin-number + 1;
   }
 }

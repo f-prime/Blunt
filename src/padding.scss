@@ -1,37 +1,36 @@
-@use 'sass:math';
+@use 'sass:string';
 
 $padding-max: 20;
-$padding-increment: 0.1;
-$padding-start: 0;
+$padding-number: 0;
+$padding-decimal: 0;
+$padding-decimal-inc: 1;
 
-@mixin paddingGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0 and $decimal < 10) {
-    .#{$prefix}pt-#{$number}p#{$decimal} { padding-top: #{$val}vh; }
-    .#{$prefix}pb-#{$number}p#{$decimal} { padding-bottom: #{$val}vh; }
-    .#{$prefix}pl-#{$number}p#{$decimal} { padding-left: #{$val}vw; }
-    .#{$prefix}pr-#{$number}p#{$decimal} { padding-right: #{$val}vw; }
-    .#{$prefix}p-#{$number}p#{$decimal} { padding: #{$val}rem; }
-  } @else if($decimal == 10) {
-    .#{$prefix}pt-#{$number + 1} { padding-top: #{$val}vh; }
-    .#{$prefix}pb-#{$number + 1} { padding-bottom: #{$val}vh; }
-    .#{$prefix}pl-#{$number + 1} { padding-left: #{$val}vw; }
-    .#{$prefix}pr-#{$number + 1} { padding-right: #{$val}vw; }
-    .#{$prefix}p-#{$number + 1} { padding: #{$val}rem; }
+@mixin paddingGen($prefix, $number, $decimal) {
+  @if($decimal > 0) {
+    .#{$prefix}pt-#{$number}p#{$decimal} { padding-top: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}pb-#{$number}p#{$decimal} { padding-bottom: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}pl-#{$number}p#{$decimal} { padding-left: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}pr-#{$number}p#{$decimal} { padding-right: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}p-#{$number}p#{$decimal} { padding: string.unquote("#{$number}.#{$decimal}rem"); }
   } @else {
-    .#{$prefix}pt-0 { padding-top: 0; }
-    .#{$prefix}pb-0 { padding-bottom: 0; }
-    .#{$prefix}pl-0 { padding-left: 0; }
-    .#{$prefix}pr-0 { padding-right: 0; }
-    .#{$prefix}p-0 { padding: 0; }
+    .#{$prefix}pt-#{$number} { padding-top: #{$number}vh; }
+    .#{$prefix}pb-#{$number} { padding-bottom: #{$number}vh; }
+    .#{$prefix}pl-#{$number} { padding-left: #{$number}vw; }
+    .#{$prefix}pr-#{$number} { padding-right: #{$number}vw; }
+    .#{$prefix}p-#{$number} { padding: #{$number}rem; }
   }
 }
 
 @mixin padding($prefix) {
-  @while($padding-start <= $padding-max) {
-    $decimal: $padding-start * 10 % 10;
-    $number: math.floor($padding-start);
+  @while($padding-number <= $padding-max) {
+    @include paddingGen($prefix, $padding-number, $padding-decimal);
+    @while($padding-decimal < 10 and $padding-decimal-inc > 0) {
+      $padding-decimal: $padding-decimal + $padding-decimal-inc;
+      @if($padding-decimal != 10) {
+        @include paddingGen($prefix, $padding-number, $padding-decimal);
+      }
+    }
 
-    @include paddingGen($prefix, $number, $decimal, $padding-start);
-    $padding-start: $padding-start + $padding-increment;
+    $padding-number: $padding-number + 1;
   }
 }

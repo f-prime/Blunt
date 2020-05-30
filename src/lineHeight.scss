@@ -1,25 +1,28 @@
-@use 'sass:math';
+@use 'sass:string';
 
-$line-height-max: 6;
-$line-height-increment: 0.1;
-$line-height-start: 0;
+$line-height-max: 5;
+$line-height-number: 0;
+$line-height-decimal: 0;
+$line-height-decimal-inc: 1;
 
-@mixin lineHeightGen($prefix, $number, $decimal, $val) {
+@mixin lineHeightGen($prefix, $number, $decimal) {
   @if($decimal > 0 and $decimal < 10){
-    .#{$prefix}lh-#{$number}p#{$decimal} { line-height: #{$val}rem; }
-  } @else if($decimal == 10) {
-    .#{$prefix}lh-#{$number + 1} { line-height: #{$val}rem; }
-  } #else {
-    .#{$prefix}lh-0 { line-height: 0; }
+    .#{$prefix}lh-#{$number}p#{$decimal} { line-height: string.unquote("#{$number}.#{$decimal}rem"); }
+  } @else {
+    .#{$prefix}lh-#{$number} { line-height: #{$number}rem; }
   }
 }
 
 @mixin lineHeight($prefix) {
-  @while($line-height-start <= $line-height-max) {
-    $decimal: $line-height-start * 10 % 10;
-    $number: math.floor($line-height-start);
+  @while($line-height-number <= $line-height-max) {
+    @include lineHeightGen($prefix, $line-height-number, $line-height-decimal);
+    @while($line-height-decimal < 10 and $line-height-decimal-inc > 0) {
+      $line-height-decimal: $line-height-decimal + $line-height-decimal-inc;
+      @if($line-height-decimal != 10) {
+        @include lineHeightGen($prefix, $line-height-number, $line-height-decimal);
+      }
+    }
 
-    @include lineHeightGen($prefix, $number, $decimal, $line-height-start);
-    $line-height-start: $line-height-start + $line-height-increment;
+    $line-height-number: $line-height-number + 1;
   }
 }

@@ -1,25 +1,28 @@
-@use 'sass:math';
+@use 'sass:string';
 
-$grid-gap-max: 8;
-$grid-gap-increment: 0.1;
-$grid-gap-start: 0;
+$grid-max: 5;
+$grid-number: 0;
+$grid-decimal: 0;
+$grid-decimal-inc: 1;
 
-@mixin gridGapGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0 and $decimal < 10){
-    .#{$prefix}gap-#{$number}p#{$decimal} { grid-gap: #{$val}rem; }
-  } @else if($decimal == 10) {
-    .#{$prefix}gap-#{$number + 1} { grid-gap: #{$val}rem; }
+@mixin gridGen($prefix, $number, $decimal) {
+  @if($decimal > 0) {
+    .#{$prefix}gap-#{$number}p#{$decimal} { grid-gap: string.unquote("#{$number}.#{$decimal}rem"); }
   } @else {
-    .#{$prefix}gap-0 { grid-gap: 0rem; }
+    .#{$prefix}gap-#{$number} { grid-gap: #{$number}rem; }
   }
 }
 
 @mixin gridGap($prefix) {
-  @while($grid-gap-start <= $grid-gap-max) {
-    $decimal: $grid-gap-start * 10 % 10;
-    $number: math.floor($grid-gap-start);
+  @while($grid-number <= $grid-max) {
+    @include gridGen($prefix, $grid-number, $grid-decimal);
+    @while($grid-decimal < 10 and $grid-decimal-inc > 0) {
+      $grid-decimal: $grid-decimal + $grid-decimal-inc;
+      @if($grid-decimal != 10) {
+        @include gridGen($prefix, $grid-number, $grid-decimal);
+      }
+    }
 
-    @include gridGapGen($prefix, $number, $decimal, $grid-gap-start);
-    $grid-gap-start: $grid-gap-start + $grid-gap-increment;
+    $grid-number: $grid-number + 1;
   }
 }

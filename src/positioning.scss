@@ -1,29 +1,36 @@
-@use 'sass:math';
+@use 'sass:string';
 
 $positioning-max: 100;
-$positioning-increment: 0.5;
-$positioning-start: 0;
+$positioning-number: 0;
+$positioning-decimal: 0;
+$positioning-decimal-inc: 5;
 
-@mixin positioningGen($prefix, $number, $decimal, $val) {
-  @if($decimal != 10) {
-    .#{$prefix}top-#{$number}p#{$decimal} { top: #{$val}vh; }
-    .#{$prefix}bottom-#{$number}p#{$decimal} { bottom: #{$val}vh; }
-    .#{$prefix}left-#{$number}p#{$decimal} { left: #{$val}vw; }
-    .#{$prefix}right-#{$number}p#{$decimal} { right: #{$val}vw; }
+@mixin positioningGen($prefix, $number, $decimal) {
+  @if($decimal > 0) {
+    .#{$prefix}top-#{$number}p#{$decimal} { top: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}bottom-#{$number}p#{$decimal} { bottom: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}left-#{$number}p#{$decimal} { left: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}right-#{$number}p#{$decimal} { right: string.unquote("#{$number}.#{$decimal}vw"); }
   } @else {
-    .#{$prefix}top-#{$number + 1} { top: #{$val}vh; }
-    .#{$prefix}bottom-#{$number + 1} { bottom: #{$val}vh; }
-    .#{$prefix}left-#{$number + 1} { left: #{$val}vw; }
-    .#{$prefix}right-#{$number + 1} { right: #{$val}vw; }
+    .#{$prefix}top-#{$number} { top: #{$number}vh; }
+    .#{$prefix}bottom-#{$number} { bottom: #{$number}vh; }
+    .#{$prefix}left-#{$number} { left: #{$number}vw; }
+    .#{$prefix}right-#{$number} { right: #{$number}vw; }
   }
 }
 
 @mixin positioning($prefix) {
-  @while($positioning-start <= $positioning-max) {
-    $decimal: $positioning-start * 10 % 10;
-    $number: math.floor($positioning-start);
+  @while($positioning-number <= $positioning-max) {
+    @include positioningGen($prefix, $positioning-number, $positioning-decimal);
+    @while($positioning-decimal < 10 and $positioning-decimal-inc > 0) {
+      $positioning-decimal: $positioning-decimal + $positioning-decimal-inc;
+      @if($positioning-decimal != 10) {
+        @include positioningGen($prefix, $positioning-number, $positioning-decimal);
+      }
+    }
 
-    @include positioningGen($prefix, $number, $decimal, $positioning-start);
-    $positioning-start: $positioning-start + $positioning-increment;
+    $positioning-number: $positioning-number + 1;
   }
 }
+
+

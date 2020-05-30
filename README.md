@@ -48,7 +48,7 @@ Simply add the following line to your HTML file.
 
 Blunt is written in SCSS. To generate the CSS code clone the repo and run the following command:
 
-`sass src/blunt.scss > blunt.css`
+`sass src/blunt.scss blunt.css`
 
 # Example
 
