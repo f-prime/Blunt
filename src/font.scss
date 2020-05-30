@@ -6,9 +6,9 @@ $font-start: 0;
 
 @mixin fontGen($prefix, $number, $decimal, $val) {
   @if($decimal > 0) {
-    .#{$prefix}font-#{$number}p#{$decimal} { font: #{$val}rem; }
+    .#{$prefix}font-#{$number}p#{$decimal} { font-size: #{$val}rem; }
   } @else {
-    .#{$prefix}font-#{$number} { font: #{$val}rem; }
+    .#{$prefix}font-#{$number} { font-size: #{$val}rem; }
   }
 }
 
