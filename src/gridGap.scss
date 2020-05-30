@@ -5,10 +5,12 @@ $grid-gap-increment: 0.1;
 $grid-gap-start: 0;
 
 @mixin gridGapGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0) {
+  @if($decimal > 0 and $decimal < 10){
     .#{$prefix}gap-#{$number}p#{$decimal} { grid-gap: #{$val}rem; }
+  } @else if($decimal == 10) {
+    .#{$prefix}gap-#{$number + 1} { grid-gap: #{$val}rem; }
   } @else {
-    .#{$prefix}gap-#{$number} { grid-gap: #{$val}rem; }
+    .#{$prefix}gap-0 { grid-gap: 0rem; }
   }
 }
 

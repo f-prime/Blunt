@@ -5,16 +5,16 @@ $positioning-increment: 0.5;
 $positioning-start: 0;
 
 @mixin positioningGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0) {
+  @if($decimal != 10) {
     .#{$prefix}top-#{$number}p#{$decimal} { top: #{$val}vh; }
     .#{$prefix}bottom-#{$number}p#{$decimal} { bottom: #{$val}vh; }
     .#{$prefix}left-#{$number}p#{$decimal} { left: #{$val}vw; }
     .#{$prefix}right-#{$number}p#{$decimal} { right: #{$val}vw; }
   } @else {
-    .#{$prefix}top-#{$number} { top: #{$val}vh; }
-    .#{$prefix}bottom-#{$number} { bottom: #{$val}vh; }
-    .#{$prefix}left-#{$number} { left: #{$val}vw; }
-    .#{$prefix}right-#{$number} { right: #{$val}vw; }
+    .#{$prefix}top-#{$number + 1} { top: #{$val}vh; }
+    .#{$prefix}bottom-#{$number + 1} { bottom: #{$val}vh; }
+    .#{$prefix}left-#{$number + 1} { left: #{$val}vw; }
+    .#{$prefix}right-#{$number + 1} { right: #{$val}vw; }
   }
 }
 

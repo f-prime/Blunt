@@ -5,18 +5,24 @@ $margin-increment: 0.1;
 $margin-start: 0;
 
 @mixin marginGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0) {
+  @if($decimal > 0 and $decimal < 10) {
     .#{$prefix}mt-#{$number}p#{$decimal} { margin-top: #{$val}vh; }
     .#{$prefix}mb-#{$number}p#{$decimal} { margin-bottom: #{$val}vh; }
     .#{$prefix}ml-#{$number}p#{$decimal} { margin-left: #{$val}vw; }
     .#{$prefix}mr-#{$number}p#{$decimal} { margin-right: #{$val}vw; }
     .#{$prefix}m-#{$number}p#{$decimal} { margin: #{$val}rem; }
+  } @else if($decimal == 10) {
+    .#{$prefix}mt-#{$number + 1} { margin-top: #{$val}vh; }
+    .#{$prefix}mb-#{$number + 1} { margin-bottom: #{$val}vh; }
+    .#{$prefix}ml-#{$number + 1} { margin-left: #{$val}vw; }
+    .#{$prefix}mr-#{$number + 1} { margin-right: #{$val}vw; }
+    .#{$prefix}m-#{$number + 1} { margin: #{$val}rem; }
   } @else {
-    .#{$prefix}mt-#{$number} { margin-top: #{$val}vh; }
-    .#{$prefix}mb-#{$number} { margin-bottom: #{$val}vh; }
-    .#{$prefix}ml-#{$number} { margin-left: #{$val}vw; }
-    .#{$prefix}mr-#{$number} { margin-right: #{$val}vw; }
-    .#{$prefix}m-#{$number} { margin: #{$val}rem; }
+    .#{$prefix}mt-0 { margin-top: 0; }
+    .#{$prefix}mb-0 { margin-bottom: 0; }
+    .#{$prefix}ml-0 { margin-left: 0; }
+    .#{$prefix}mr-0 { margin-right: 0; }
+    .#{$prefix}m-0 { margin: 0; }
   }
 }
 

@@ -5,10 +5,12 @@ $line-height-increment: 0.1;
 $line-height-start: 0;
 
 @mixin lineHeightGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0) {
+  @if($decimal > 0 and $decimal < 10){
     .#{$prefix}lh-#{$number}p#{$decimal} { line-height: #{$val}rem; }
-  } @else {
-    .#{$prefix}lh-#{$number} { line-height: #{$val}rem; }
+  } @else if($decimal == 10) {
+    .#{$prefix}lh-#{$number + 1} { line-height: #{$val}rem; }
+  } #else {
+    .#{$prefix}lh-0 { line-height: 0; }
   }
 }
 

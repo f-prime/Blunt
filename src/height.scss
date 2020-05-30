@@ -13,12 +13,15 @@ $height-start-px: 0;
 }
 
 @mixin heightPercentGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0) {
+  @if($decimal > 0 and $decimal < 10){
     .#{$prefix}h-#{$number}p#{$decimal} { height: percentage($val / 100); }
     .#{$prefix}vh-#{$number}p#{$decimal} { height: #{$val}vh; }
+  } @else if($decimal == 10) {
+    .#{$prefix}h-#{$number + 1} { height: percentage($val / 100); }
+    .#{$prefix}vh-#{$number + 1} { height: #{$val}vh; }
   } @else {
-    .#{$prefix}h-#{$number} { height: percentage($val / 100); }
-    .#{$prefix}vh-#{$number} { height: #{$val}vh; }
+    .#{$prefix}h-0 { height: 0; }
+    .#{$prefix}vh-0 { height: 0; }
   }
 }
 

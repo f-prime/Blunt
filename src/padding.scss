@@ -5,18 +5,24 @@ $padding-increment: 0.1;
 $padding-start: 0;
 
 @mixin paddingGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0) {
+  @if($decimal > 0 and $decimal < 10) {
     .#{$prefix}pt-#{$number}p#{$decimal} { padding-top: #{$val}vh; }
     .#{$prefix}pb-#{$number}p#{$decimal} { padding-bottom: #{$val}vh; }
     .#{$prefix}pl-#{$number}p#{$decimal} { padding-left: #{$val}vw; }
     .#{$prefix}pr-#{$number}p#{$decimal} { padding-right: #{$val}vw; }
     .#{$prefix}p-#{$number}p#{$decimal} { padding: #{$val}rem; }
+  } @else if($decimal == 10) {
+    .#{$prefix}pt-#{$number + 1} { padding-top: #{$val}vh; }
+    .#{$prefix}pb-#{$number + 1} { padding-bottom: #{$val}vh; }
+    .#{$prefix}pl-#{$number + 1} { padding-left: #{$val}vw; }
+    .#{$prefix}pr-#{$number + 1} { padding-right: #{$val}vw; }
+    .#{$prefix}p-#{$number + 1} { padding: #{$val}rem; }
   } @else {
-    .#{$prefix}pt-#{$number} { padding-top: #{$val}vh; }
-    .#{$prefix}pb-#{$number} { padding-bottom: #{$val}vh; }
-    .#{$prefix}pl-#{$number} { padding-left: #{$val}vw; }
-    .#{$prefix}pr-#{$number} { padding-right: #{$val}vw; }
-    .#{$prefix}p-#{$number} { padding: #{$val}rem; }
+    .#{$prefix}pt-0 { padding-top: 0; }
+    .#{$prefix}pb-0 { padding-bottom: 0; }
+    .#{$prefix}pl-0 { padding-left: 0; }
+    .#{$prefix}pr-0 { padding-right: 0; }
+    .#{$prefix}p-0 { padding: 0; }
   }
 }
 

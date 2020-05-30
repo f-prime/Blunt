@@ -5,10 +5,12 @@ $font-increment: 0.1;
 $font-start: 0;
 
 @mixin fontGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0) {
+  @if($decimal > 0 and $decimal < 10) {
     .#{$prefix}font-#{$number}p#{$decimal} { font-size: #{$val}rem; }
+  } @else if($decimal == 10) {
+    .#{$prefix}font-#{$number + 1} { font-size: #{$val}rem; }
   } @else {
-    .#{$prefix}font-#{$number} { font-size: #{$val}rem; }
+    .#{$prefix}font-0 { font-size: 0rem; }
   }
 }
 

@@ -13,12 +13,15 @@ $width-start-px: 0;
 }
 
 @mixin widthPercentGen($prefix, $number, $decimal, $val) {
-  @if($decimal > 0) {
+  @if($decimal > 0 and $decimal < 10) {
     .#{$prefix}w-#{$number}p#{$decimal} { width: percentage($val / 100); }
     .#{$prefix}vw-#{$number}p#{$decimal} { width: #{$val}vw; }
+  } @else if($decimal == 10) {
+    .#{$prefix}w-#{$number + 1} { width: percentage($val / 100); }
+    .#{$prefix}vw-#{$number + 1} { width: #{$val}vw; }
   } @else {
-    .#{$prefix}w-#{$number} { width: percentage($val / 100); }
-    .#{$prefix}vw-#{$number} { width: #{$val}vw; }
+    .#{$prefix}w-0 { width: 0; }
+    .#{$prefix}vw-0 { width: 0; }
   }
 }
 
