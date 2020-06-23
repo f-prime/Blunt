@@ -56,7 +56,9 @@ html, body {
   .#{$prefix}v-space-around { align-items: space-around; }
   
   @include padding.padding($prefix);
+  @include padding.paddingPx($prefix);
   @include margin.margin($prefix);
+  @include margin.marginPx($prefix);
   @include positioning.positioning($prefix);
   @include gridCol.gridCol($prefix);
   @include gridGap.gridGap($prefix);

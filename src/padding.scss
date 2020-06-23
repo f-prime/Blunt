@@ -5,6 +5,9 @@ $padding-number: 0;
 $padding-decimal: 0;
 $padding-decimal-inc: 1;
 
+$padding-px-max: 1000;
+$padding-px-number: 0;
+
 @mixin paddingGen($prefix, $number, $decimal) {
   @if($decimal > 0) {
     .#{$prefix}pt-#{$number}p#{$decimal} { padding-top: string.unquote("#{$number}.#{$decimal}vh"); }
@@ -12,12 +15,33 @@ $padding-decimal-inc: 1;
     .#{$prefix}pl-#{$number}p#{$decimal} { padding-left: string.unquote("#{$number}.#{$decimal}vw"); }
     .#{$prefix}pr-#{$number}p#{$decimal} { padding-right: string.unquote("#{$number}.#{$decimal}vw"); }
     .#{$prefix}p-#{$number}p#{$decimal} { padding: string.unquote("#{$number}.#{$decimal}rem"); }
+    .#{$prefix}py-#{$number}p#{$decimal} { padding-top: string.unquote("#{$number}.#{$decimal}vh"); padding-bottom: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}px-#{$number}p#{$decimal} { padding-left: string.unquote("#{$number}.#{$decimal}vw"); padding-right: string.unquote("#{$number}.#{$decimal}vw"); } 
   } @else {
+    .#{$prefix}py-#{$number} { padding-top: #{$number}vh; padding-bottom: #{$number}vh;}
+    .#{$prefix}px-#{$number} { padding-left: #{$number}vw; padding-right: #{$number}vw;}
     .#{$prefix}pt-#{$number} { padding-top: #{$number}vh; }
     .#{$prefix}pb-#{$number} { padding-bottom: #{$number}vh; }
     .#{$prefix}pl-#{$number} { padding-left: #{$number}vw; }
     .#{$prefix}pr-#{$number} { padding-right: #{$number}vw; }
     .#{$prefix}p-#{$number} { padding: #{$number}rem; }
+  }
+}
+
+@mixin paddingPxGen($prefix, $number) {
+  .#{$prefix}pxpy-#{$number} { padding-top: #{$number}px; padding-bottom: #{$number}px;}
+  .#{$prefix}pxpx-#{$number} { padding-left: #{$number}px; padding-right: #{$number}px; }
+  .#{$prefix}pxpt-#{$number} { padding-top: #{$number}px; }
+  .#{$prefix}pxpb-#{$number} { padding-bottom: #{$number}px; }
+  .#{$prefix}pxpl-#{$number} { padding-left: #{$number}px; }
+  .#{$prefix}pxpr-#{$number} { padding-right: #{$number}px; }
+  .#{$prefix}pxp-#{$number} { padding: #{$number}px; } 
+}
+
+@mixin paddingPx($prefix) {
+  @while($padding-px-number <= $padding-px-max) {
+    @include paddingPxGen($prefix, $padding-px-number);
+    $padding-px-number: $padding-px-number + 1;
   }
 }
 

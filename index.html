@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+    <title>Blunt</title>
+    <link rel="stylesheet" type="text/css" href="./src/blunt.css">
+    <link rel="icon" type="image/png" href="logo.png"> 
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body>
+    <style>
+:root {
+  --blue: #4585c5;
+  --light-blue: #4585c533;
+}
+
+html, body { 
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.code {
+  border-radius: 5px;
+  background-color: var(--light-blue);
+  font-family: 'Fira Code', monospace;
+  display: block;
+  white-space: pre;
+}
+
+.links {
+  border: 1px solid var(--light-blue);
+  border-radius: 5px;
+}
+
+    </style>
+    <div class="md-vw-60 sm-vw-90 lg-vw-60 auto-center pt-5 pb-5 lh-2 font-1p2">
+      <section>
+        <header class="font-2 ">Blunt</header>
+        <p>A CSS layout framework that gets to the point and stays out of your way.</p>
+        <p class="mt-3">
+          <a class="github-button" href="https://github.com/f-prime/blunt" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star f-prime/Blunt on GitHub">Star</a>
+        </p>
+        <p class="font-1p2">
+          Blunt is designed to make creating page layouts a easy. It provides a host of general CSS classes to position elements, add padding and margins to elements, create responsive grids, and more.
+          It has no opinions on how your page should look. This means that you won't have to fight with Blunt to overwrite default colors and button styles. All of that is left up to you.
+        </p>
+        <p class="mt-3">
+          You can find Blunt on <a href="https://github.com/f-prime/Blunt">GitHub</a>
+          and join the discussion on <a href="https://gitter.im/Blunt-css">Gitter</a>.
+        </p>
+      </section>
+      <section>
+        <header class="font-2 mt-5">Getting Started</header>
+        <p>
+          Include Blunt into your project with the this single line of code.
+        </p>
+        <p class="code pt-1 pb-1 pl-1 pr-1 text-center">
+          &lt;link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/f-prime/blunt/src/blunt.css"&gt;
+        </p>
+      </section>
+      <section>
+        <header class="font-2 mt-5">Documentation</header>
+        <div class="mt-3 links col lg-row h-space-around pt-1 pb-1">
+          <a class="col" href="#basic">Basics</a>
+          <a class="col" href="#container">Container</a>
+          <a class="col" href="#width-height">Width and Height</a>
+          <a class="col" href="#row-col">Row and Col</a>
+          <a class="col" href="#grid">Grid</a>
+          <a class="col" href="#font-lineheight">Font and Line Height</a>
+          <a class="col" href="#position">Positioning</a>
+        </div>
+        <header class="font-1p7 mt-5" id="basics">Basics</header>
+        <div class="mt-2">
+          <p>
+            With the exception of the container class, all classes in Blunt follow the same structure.
+          </p>
+          <p class="code pt-1 pb-1 pl-1 pr-1">
+            {size}-{className}-{value}
+          </p>
+          <p>
+            Where {size} is replaced with a screen size lg, md, or sm, {className} is replaced with the specific Blunt class and {value} is replaced with a number.
+          </p>
+
+          <p>
+            Blunt currently supports three screen sizes sm (max width 900px) md (max width 1500px) and lg (min width 1500px)  
+          </p>
+
+          <p>
+          As a practical example, let's say we wanted to add padding to the top of an element. <br/>
+          If we wanted to do this for all screen sizes we would do this.
+          </p>
+
+          <p class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="pt-1"&gt;</p>
+
+          <p>
+            If we wanted to have this padding on only spall screens (screen size &lt; 900px) we would do the following
+          </p>
+
+          <p class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="sm-pt-1"&gt;</p>
+
+          <p>The padding class along with some other classes also support decimal values using the notation <div class="mt-1 code pt-1 pb-1 pl-1 pr-1">{number}p{fraction}</div></p>
+
+          <p>So if we wanted to add, say, a padding of 1.3 to the top of an element we could do the following.</p>
+
+          <p class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="pt-1p3"&gt;</p>
+        </div>
+        <header class="font-1p7 mt-3" id="container">Container</header>
+        <div class="mt-2">
+          <p>The container class creates an element with responsive width.</p>
+
+          <div class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="container"&gt;
+  Other stuff              
+&lt;/div&gt;</div>
+        </div>
+        <header class="font-1p7 mt-3" id="width-height">Width and Height</header>
+          
+        <p>Blunt provides 3 different width and height classes</p>
+        <p>{h,w}-{1-100}, px{h,w}-{1-1000} and v{h,w}-{1-100}</p>
+        <p>
+          <div class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="w-50"&gt;</div>
+        </p>
+        <p>
+          Makes the div's width 50%
+        </p>
+        <p>
+          <div class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="vh-50"&gt;</div>
+        </p>
+        <p>
+          Makes the div's height 50vh
+        </p>
+        <p>
+          <div class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="md-pxw-500"&gt;</div>
+        </p>
+        <p>
+          Makes the div's width 500px on medium sized screens
+        </p>
+        <header class="font-1p7 mt-3" id="margin-padding">Margin and Padding</header>
+        <div class="mt-2">
+          <p>The following padding and margin classes are provided</p>
+          <p>{m,p}{l,r,t,b}-{0-15}p{1-9}</p>
+          <p>
+            <div class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="mt-5"&gt;</div>
+          </p>
+          <p>Adds a top margin of 5vh to the div</p>
+          <p><div class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="pl-3"&gt;</div></p>
+          <p>Adds a padding left of 3vw to the div</p>
+          <p><div class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="sm-mb-2p5"&gt;</div></p>
+          <p>Adds a margin of 2.5vh to the div on small screens</p>
+          <p><div class="code pt-1 pb-1 pl-1 pr-1">&lt;div class="md-pr-10"&gt;</div></p>
+          <p>Adds a padding right of 10vw to the div on medium screens</p>
+        </div>
+        <header class="font-1p7 mt-3" id="row-col">Row and Col</header>
+        <header class="font-1p7 mt-3" id="grid">Grid</header>
+        <header class="font-1p7 mt-3" id="font-lineheight">Font and Line Height</header>
+        <header class="font-1p7 mt-3" id="position">Positioning</header>
+      </section>
+      <section class="mt-2">
+        <header class="font-2 mt-3">Simple Card</header>
+      </section>
+    </div>
+  </body>
+</html>

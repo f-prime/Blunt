@@ -5,19 +5,43 @@ $margin-number: 0;
 $margin-decimal: 0;
 $margin-decimal-inc: 1;
 
+$margin-px-max: 1000;
+$margin-px-number: 0;
+
 @mixin marginGen($prefix, $number, $decimal) {
   @if($decimal > 0) {
     .#{$prefix}mt-#{$number}p#{$decimal} { margin-top: string.unquote("#{$number}.#{$decimal}vh"); }
     .#{$prefix}mb-#{$number}p#{$decimal} { margin-bottom: string.unquote("#{$number}.#{$decimal}vh"); }
     .#{$prefix}ml-#{$number}p#{$decimal} { margin-left: string.unquote("#{$number}.#{$decimal}vw"); }
     .#{$prefix}mr-#{$number}p#{$decimal} { margin-right: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}my-#{$number}p#{$decimal} { margin-top: string.unquote("#{$number}.#{$decimal}vh"); margin-bottom: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}mx-#{$number}p#{$decimal} { margin-left: string.unquote("#{$number}.#{$decimal}vw"); margin-right: string.unquote("#{$number}.#{$decimal}vw"); }
     .#{$prefix}m-#{$number}p#{$decimal} { margin: string.unquote("#{$number}.#{$decimal}rem"); }
   } @else {
+    .#{$prefix}my-#{$number} { margin-top: #{$number}vh; margin-bottom: #{$number}vh;}
+    .#{$prefix}mx-#{$number} { margin-left: #{$number}vw; margin-right: #{$number}vw;}
     .#{$prefix}mt-#{$number} { margin-top: #{$number}vh; }
     .#{$prefix}mb-#{$number} { margin-bottom: #{$number}vh; }
     .#{$prefix}ml-#{$number} { margin-left: #{$number}vw; }
     .#{$prefix}mr-#{$number} { margin-right: #{$number}vw; }
     .#{$prefix}m-#{$number} { margin: #{$number}rem; }
+  }
+}
+
+@mixin marginPxGen($prefix, $number) {
+  .#{$prefix}pxmy-#{$number} { margin-top: #{$number}px; margin-bottom: #{$number}px;}
+  .#{$prefix}pxmx-#{$number} { margin-left: #{$number}px; margin-right: #{$number}px; }
+  .#{$prefix}pxmt-#{$number} { margin-top: #{$number}px; }
+  .#{$prefix}pxmb-#{$number} { margin-bottom: #{$number}px; }
+  .#{$prefix}pxml-#{$number} { margin-left: #{$number}px; }
+  .#{$prefix}pxmr-#{$number} { margin-right: #{$number}px; }
+  .#{$prefix}pxm-#{$number} { margin: #{$number}px; } 
+}
+
+@mixin marginPx($prefix) {
+  @while($margin-px-number <= $margin-px-max) {
+    @include marginPxGen($prefix, $margin-px-number);
+    $margin-px-number: $margin-px-number + 1;
   }
 }
 

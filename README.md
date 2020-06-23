@@ -139,9 +139,15 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-text-{left, right, center}` - Aligns text in one of three locations: left, right, or center
 
-`{size}-m{t,l,r,b}-{0-15}p{0-9}` - Margin class `sm-mt-3p3` will resolve to  `margin-top: 3.3vh` for the small screen size
+`{size}-m{t,l,r,b,x,y}-{0-15}p{0-9}` - Margin class `sm-mt-3p3` will resolve to  `margin-top: 3.3vh` for the small screen size
 
-`{size}-p{t,l,r,b}-{0-15}p{0-9}` - Padding class `md-pl-3p3` will resolve to  `padding-left: 3.3vw` for the medium screen size
+`{size}-p{t,l,r,b,x,y}-{0-15}p{0-9}` - Padding class `md-pl-3p3` will resolve to  `padding-left: 3.3vw` for the medium screen size.
+
+`{size}-pxm{t,l,r,b,x,y}-{0-1000}` - Margin class `lg-pxmt-50` will resolve to `margin-top: 50px` for the large screen size.
+
+`{size}-pxp{t,l,r,b,x,y}-{0-1000}` - Padding class `sm-pxpl-25` will resolve to `padding-left: 25px` for the small screen size.
+
+ NOTE: For padding Blunt also provides bidirectional padding and margin `px-`, `py-`, `mx-`, `my-`. `px-5` will resolve to `padding-left: 5vw; padding-right: 5vw;` and the equivalent for `mx-5` 
 
 `{size}-lh-{0-4}p{0-9}` - Line height class `lg-lh-1p3` will resolve to `line-height: 1.3rem` for the large screen 
 
