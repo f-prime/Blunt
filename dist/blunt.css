@@ -176131,9 +176131,9 @@ html, body {
     width: 90%;
   }
 }
-@media only screen and (min-width: 901px) and (max-width: 1500px) {
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
   .container {
-    width: 85%;
+    width: 90%;
   }
 
   .md-hidden {
@@ -264197,13 +264197,13 @@ html, body {
     height: 100.5vh;
   }
 }
-@media only screen and (min-width: 1501px) {
+@media only screen and (min-width: 1201px) {
   .lg-hidden {
     display: none !important;
   }
 
   .container {
-    width: 80%;
+    width: 90%;
   }
 
   .lg-absolute {
