@@ -44,6 +44,8 @@ Simply add the following line to your HTML file.
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/f-prime/blunt/dist/blunt.min.css">
 ```
 
+NOTE: Blunt is big at around 1mb minified. Along with standard gzip compression, it is highly suggested that in a production environment a tool like [purify-css](https://www.npmjs.com/package/purify-css) is used to minimize blunt as much as possible. There will be a noticable performance decrease if not.
+
 # Building the CSS
 
 Blunt is written in SCSS. To generate the CSS code clone the repo and run the following command:
@@ -55,13 +57,13 @@ Blunt is written in SCSS. To generate the CSS code clone the repo and run the fo
 Let's create a simple responsive card using Blunt.
 
 ```html
-<div class="container auto-center h-100 row v-center h-center">
+<div class="container mx-auto h-100 row v-center h-center">
   <div class="card lg-w-30 md-w-40 sm-w-90 pt-2 pb-2 pl-2 pr-2">
     <div class="sm-col md-row lg-row md-v-center lg-v-center">
-      <div class="sm-auto-center">
+      <div class="sm-mx-auto">
         <img class="rounded" src="https://randomuser.me/api/portraits/women/12.jpg">
       </div>
-      <div class="sm-auto-center sm-text-center font-1p2 lg-ml-2 md-ml-2">
+      <div class="sm-mx-auto sm-text-center font-1p2 lg-ml-2 md-ml-2">
         <div class="sm-pt-1p3 pb-1p3 font-2p2">Erin May</div>
         <div class="purple">Software Engineer</div>
         <div class="pt-0p5 pb-0p5">emay@example.com</div>
@@ -135,7 +137,11 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-gap-{0-4}p{1-9}` - Defines the grid gap between 0.1 and 4 rem
 
-`{size}-auto-center` - Does `margin-left: auto; margin-right: auto;`
+`{size}-m-auto` - Does `margin: auto`
+
+`{size}-auto-center, {size}-mx-auto` - Does `margin: 0 auto`
+
+`{size}-my-auto` - Does `margin: auto 0`
 
 `{size}-text-{left, right, center}` - Aligns text in one of three locations: left, right, or center
 
@@ -165,7 +171,7 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-col` - `lg-col` will resolve to `width: 100%; display: flex; flex-direction: column;` for large screens
 
-`{size}-{v, h}-{center, end, space-around, space-between}` - `lg-h-center` will center the row items horizontally on large screens 
+`{size}-{v, h, align, justify}-{start, center, end, space-around, space-between}` - `lg-h-center` will center the row items horizontally on large screens 
 
 `{size}-text-{center, left, right}` - `text-center` will center text
 

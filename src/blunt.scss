@@ -28,8 +28,19 @@ html, body {
   .#{$prefix}grid-v-end { align-items: end; }
 
   .#{$prefix}auto-center { 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+  }
+
+  .#{$prefix}m-auto {
+    margin: auto;
+  }
+
+  .#{$prefix}mx-auto {
+    margin: 0 auto;
+  }
+
+  .#{$prefix}my-auto {
+    margin: auto 0;
   }
 
   .#{$prefix}text-center { text-align: center; }
@@ -46,6 +57,8 @@ html, body {
     flex-direction: row;
   }
 
+  .#{$prefix}h-start { justify-content: flex-start; }
+  .#{$prefix}v-start { align-items: flex-start; }
   .#{$prefix}h-end { justify-content: flex-end; }
   .#{$prefix}v-end { align-items: flex-end; }
   .#{$prefix}v-center { align-items: center; }
@@ -54,6 +67,17 @@ html, body {
   .#{$prefix}h-space-around { justify-content: space-around; }
   .#{$prefix}v-space-between { align-items: space-between; }
   .#{$prefix}v-space-around { align-items: space-around; }
+
+  .#{$prefix}justify-start { justify-content: flex-start; }
+  .#{$prefix}align-start { align-items: flex-start; }
+  .#{$prefix}justify-end { justify-content: flex-end; }
+  .#{$prefix}align-end { align-items: flex-end; }
+  .#{$prefix}align-center { align-items: center; }
+  .#{$prefix}justify-center { justify-content: center; }
+  .#{$prefix}justify-space-between { justify-content: space-between; }
+  .#{$prefix}justify-space-around { justify-content: space-around; }
+  .#{$prefix}align-space-between { align-items: space-between; }
+  .#{$prefix}align-space-around { align-items: space-around; }
   
   @include padding.padding($prefix);
   @include padding.paddingPx($prefix);

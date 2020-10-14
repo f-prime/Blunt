@@ -44,8 +44,19 @@ html, body {
 }
 
 .auto-center {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.my-auto {
+  margin: auto 0;
 }
 
 .text-center {
@@ -68,6 +79,14 @@ html, body {
 .row {
   display: flex;
   flex-direction: row;
+}
+
+.h-start {
+  justify-content: flex-start;
+}
+
+.v-start {
+  align-items: flex-start;
 }
 
 .h-end {
@@ -99,6 +118,46 @@ html, body {
 }
 
 .v-space-around {
+  align-items: space-around;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.align-space-between {
+  align-items: space-between;
+}
+
+.align-space-around {
   align-items: space-around;
 }
 
@@ -88052,8 +88111,19 @@ html, body {
   }
 
   .sm-auto-center {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+  }
+
+  .sm-m-auto {
+    margin: auto;
+  }
+
+  .sm-mx-auto {
+    margin: 0 auto;
+  }
+
+  .sm-my-auto {
+    margin: auto 0;
   }
 
   .sm-text-center {
@@ -88076,6 +88146,14 @@ html, body {
   .sm-row {
     display: flex;
     flex-direction: row;
+  }
+
+  .sm-h-start {
+    justify-content: flex-start;
+  }
+
+  .sm-v-start {
+    align-items: flex-start;
   }
 
   .sm-h-end {
@@ -88107,6 +88185,46 @@ html, body {
   }
 
   .sm-v-space-around {
+    align-items: space-around;
+  }
+
+  .sm-justify-start {
+    justify-content: flex-start;
+  }
+
+  .sm-align-start {
+    align-items: flex-start;
+  }
+
+  .sm-justify-end {
+    justify-content: flex-end;
+  }
+
+  .sm-align-end {
+    align-items: flex-end;
+  }
+
+  .sm-align-center {
+    align-items: center;
+  }
+
+  .sm-justify-center {
+    justify-content: center;
+  }
+
+  .sm-justify-space-between {
+    justify-content: space-between;
+  }
+
+  .sm-justify-space-around {
+    justify-content: space-around;
+  }
+
+  .sm-align-space-between {
+    align-items: space-between;
+  }
+
+  .sm-align-space-around {
     align-items: space-around;
   }
 
@@ -176069,8 +176187,19 @@ html, body {
   }
 
   .md-auto-center {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+  }
+
+  .md-m-auto {
+    margin: auto;
+  }
+
+  .md-mx-auto {
+    margin: 0 auto;
+  }
+
+  .md-my-auto {
+    margin: auto 0;
   }
 
   .md-text-center {
@@ -176093,6 +176222,14 @@ html, body {
   .md-row {
     display: flex;
     flex-direction: row;
+  }
+
+  .md-h-start {
+    justify-content: flex-start;
+  }
+
+  .md-v-start {
+    align-items: flex-start;
   }
 
   .md-h-end {
@@ -176124,6 +176261,46 @@ html, body {
   }
 
   .md-v-space-around {
+    align-items: space-around;
+  }
+
+  .md-justify-start {
+    justify-content: flex-start;
+  }
+
+  .md-align-start {
+    align-items: flex-start;
+  }
+
+  .md-justify-end {
+    justify-content: flex-end;
+  }
+
+  .md-align-end {
+    align-items: flex-end;
+  }
+
+  .md-align-center {
+    align-items: center;
+  }
+
+  .md-justify-center {
+    justify-content: center;
+  }
+
+  .md-justify-space-between {
+    justify-content: space-between;
+  }
+
+  .md-justify-space-around {
+    justify-content: space-around;
+  }
+
+  .md-align-space-between {
+    align-items: space-between;
+  }
+
+  .md-align-space-around {
     align-items: space-around;
   }
 
@@ -264077,8 +264254,19 @@ html, body {
   }
 
   .lg-auto-center {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+  }
+
+  .lg-m-auto {
+    margin: auto;
+  }
+
+  .lg-mx-auto {
+    margin: 0 auto;
+  }
+
+  .lg-my-auto {
+    margin: auto 0;
   }
 
   .lg-text-center {
@@ -264101,6 +264289,14 @@ html, body {
   .lg-row {
     display: flex;
     flex-direction: row;
+  }
+
+  .lg-h-start {
+    justify-content: flex-start;
+  }
+
+  .lg-v-start {
+    align-items: flex-start;
   }
 
   .lg-h-end {
@@ -264132,6 +264328,46 @@ html, body {
   }
 
   .lg-v-space-around {
+    align-items: space-around;
+  }
+
+  .lg-justify-start {
+    justify-content: flex-start;
+  }
+
+  .lg-align-start {
+    align-items: flex-start;
+  }
+
+  .lg-justify-end {
+    justify-content: flex-end;
+  }
+
+  .lg-align-end {
+    align-items: flex-end;
+  }
+
+  .lg-align-center {
+    align-items: center;
+  }
+
+  .lg-justify-center {
+    justify-content: center;
+  }
+
+  .lg-justify-space-between {
+    justify-content: space-between;
+  }
+
+  .lg-justify-space-around {
+    justify-content: space-around;
+  }
+
+  .lg-align-space-between {
+    align-items: space-between;
+  }
+
+  .lg-align-space-around {
     align-items: space-around;
   }
 
