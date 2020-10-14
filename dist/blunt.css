@@ -44,7 +44,8 @@ html, body {
 }
 
 .auto-center {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .m-auto {
@@ -52,11 +53,13 @@ html, body {
 }
 
 .mx-auto {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .my-auto {
-  margin: auto 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .text-center {
@@ -88107,7 +88110,8 @@ html, body {
   }
 
   .sm-auto-center {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .sm-m-auto {
@@ -88115,11 +88119,13 @@ html, body {
   }
 
   .sm-mx-auto {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .sm-my-auto {
-    margin: auto 0;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .sm-text-center {
@@ -176175,7 +176181,8 @@ html, body {
   }
 
   .md-auto-center {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .md-m-auto {
@@ -176183,11 +176190,13 @@ html, body {
   }
 
   .md-mx-auto {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .md-my-auto {
-    margin: auto 0;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .md-text-center {
@@ -264238,7 +264247,8 @@ html, body {
   }
 
   .lg-auto-center {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .lg-m-auto {
@@ -264246,11 +264256,13 @@ html, body {
   }
 
   .lg-mx-auto {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .lg-my-auto {
-    margin: auto 0;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .lg-text-center {

@@ -139,9 +139,9 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-m-auto` - Does `margin: auto`
 
-`{size}-auto-center, {size}-mx-auto` - Does `margin: 0 auto`
+`{size}-auto-center, {size}-mx-auto` - Does `margin-left: auto; margin-right: auto;`
 
-`{size}-my-auto` - Does `margin: auto 0`
+`{size}-my-auto` - Does `margin-top: auto; margin-bottom: auto;`
 
 `{size}-text-{left, right, center}` - Aligns text in one of three locations: left, right, or center
 
