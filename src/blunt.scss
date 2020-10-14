@@ -98,26 +98,22 @@ html, body {
 
 
 @media only screen and (max-width: 900px) {
-  html { font-size: 13px; }
   .sm-hidden { display: none !important; }
   .container { width: 95% }
   @include genCode('sm-');
 }
 
 @media only screen and (min-width: 551px) and (max-width: 900px) {
-  html { font-size: 13px; }
   .container { width: 90%; }
 }
 
 @media only screen and (min-width: 901px) and (max-width: 1500px) {
-  html { font-size: 14px; }
   .container { width: 85%; }
   .md-hidden { display: none !important; }
   @include genCode('md-');
 }
 
 @media only screen and (min-width: 1501px) {
-  html { font-size: 14px; }
   .lg-hidden { display: none !important; }
   .container { width: 80%; }
   @include genCode('lg-');

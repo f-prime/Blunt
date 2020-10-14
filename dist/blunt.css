@@ -88058,10 +88058,6 @@ html, body {
 }
 
 @media only screen and (max-width: 900px) {
-  html {
-    font-size: 13px;
-  }
-
   .sm-hidden {
     display: none !important;
   }
@@ -176125,19 +176121,11 @@ html, body {
   }
 }
 @media only screen and (min-width: 551px) and (max-width: 900px) {
-  html {
-    font-size: 13px;
-  }
-
   .container {
     width: 90%;
   }
 }
 @media only screen and (min-width: 901px) and (max-width: 1500px) {
-  html {
-    font-size: 14px;
-  }
-
   .container {
     width: 85%;
   }
@@ -264201,10 +264189,6 @@ html, body {
   }
 }
 @media only screen and (min-width: 1501px) {
-  html {
-    font-size: 14px;
-  }
-
   .lg-hidden {
     display: none !important;
   }
