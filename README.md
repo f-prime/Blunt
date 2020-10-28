@@ -137,7 +137,7 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-gap-{0-4}p{1-9}` - Defines the grid gap between 0.1 and 4 rem
 
-`{size}-m-auto` - Does `margin: auto`
+`{size}-m{l,r,t,b}-auto` - Margin class `ml-auto` does `margin-left: auto`
 
 `{size}-auto-center, {size}-mx-auto` - Does `margin-left: auto; margin-right: auto;`
 
@@ -163,6 +163,14 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-vw-{0-100}` - Width class `sm-vw-80` will resolve to `width: 100vw;` on small screens.
 
+`{size}-{min,max}-w-{0-100}` - Width calss `min-w-50` resolves to `min-width: 50%`
+
+`{size}-{min,max}-vw-{0-100}` - Width class `max-vw-50` resolves to `max-width: 50vw`
+
+`{size}-{min,max}-h-{0-100}` - Height calss `min-h-50` resolves to `min-height: 50%`
+
+`{size}-{min,max}-vh-{0-100}` - Height class `max-vh-50` resolves to `max-height: 50vw`
+
 `{size}-h-{0-100}` - Height class `md-h-100` will resolve to `height:100%;` on medium screens.
 
 `{size}-vh-{0-100}` - Height class `md-vh-100` will resolve to `height:100vh;` on medium screens.
@@ -178,6 +186,8 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 `{size}-hidden` - `lg-hidden` will hide an element on large screens
 
 `{size}-px{w,h}-{0-1000}` - `lg-pxw-300` will resolve to `width: 300px` on large screens `md-pxh-200` will resolve to `height: 200px` on medium screens.
+
+`{size}-{min,max}-px{w, h}-{0-1000}` - `sm-min-pxw-600` resolves to `min-width: 600px` on small screens
 
 `{size}-{absolute, static, sticky, fixed}` - `lg-fixed` will resolve to `position: fixed;` for large screens 
 

@@ -46,6 +46,11 @@ html, body {
     margin-bottom: auto;
   }
 
+  .#{$prefix}ml-auto { margin-left: auto; }
+  .#{$prefix}mr-auto { margin-right: auto; }
+  .#{$prefix}mt-auto { margin-top: auto; }
+  .#{$prefix}mb-auto { margin-bottom: auto; }
+
   .#{$prefix}text-center { text-align: center; }
   .#{$prefix}text-left { text-align: left; }
   .#{$prefix}text-right { text-align: right; }

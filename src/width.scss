@@ -12,15 +12,25 @@ $width-start-px: 0;
 
 @mixin widthPxGen($prefix, $val) {
   .#{$prefix}pxw-#{$val} { width: #{$val}px; }
+  .#{$prefix}max-pxw-#{$val} { max-width: #{$val}px; }
+  .#{$prefix}min-pxw-#{$val} { min-width: #{$val}px; }
 }
 
 @mixin widthPercentGen($prefix, $number, $decimal) {
   @if($decimal > 0 and $decimal < 10){
     .#{$prefix}w-#{$number}p#{$decimal} { width: string.unquote("#{$number}.#{$decimal}%"); }
     .#{$prefix}vw-#{$number}p#{$decimal} { width: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}min-w-#{$number}p#{$decimal} { min-width: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}min-vw-#{$number}p#{$decimal} { min-width: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}max-w-#{$number}p#{$decimal} { max-width: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}max-vw-#{$number}p#{$decimal} { max-width: string.unquote("#{$number}.#{$decimal}vw"); }
   } @else {
     .#{$prefix}w-#{$number} { width: string.unquote("#{$number}%"); }
     .#{$prefix}vw-#{$number} { width: string.unquote("#{$number}vw"); }
+    .#{$prefix}min-w-#{$number} { min-width: string.unquote("#{$number}%"); }
+    .#{$prefix}min-vw-#{$number} { min-width: string.unquote("#{$number}vw"); }
+    .#{$prefix}max-w-#{$number} { max-width: string.unquote("#{$number}%"); }
+    .#{$prefix}max-vw-#{$number} { max-width: string.unquote("#{$number}vw"); }
   }
 }
 

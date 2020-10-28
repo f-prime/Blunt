@@ -12,15 +12,25 @@ $height-start-px: 0;
 
 @mixin heightPxGen($prefix, $val) {
   .#{$prefix}pxh-#{$val} { height: #{$val}px; }
+  .#{$prefix}max-pxh-#{$val} { max-height: #{$val}px; }
+  .#{$prefix}min-pxh-#{$val} { min-height: #{$val}px; }
 }
 
 @mixin heightPercentGen($prefix, $number, $decimal) {
   @if($decimal > 0 and $decimal < 10){
     .#{$prefix}h-#{$number}p#{$decimal} { height: string.unquote("#{$number}.#{$decimal}%"); }
     .#{$prefix}vh-#{$number}p#{$decimal} { height: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}max-h-#{$number}p#{$decimal} { max-height: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}max-vh-#{$number}p#{$decimal} { max-height: string.unquote("#{$number}.#{$decimal}vh"); }
+    .#{$prefix}min-h-#{$number}p#{$decimal} { min-height: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}min-vh-#{$number}p#{$decimal} { min-height: string.unquote("#{$number}.#{$decimal}vh"); }
   } @else {
     .#{$prefix}h-#{$number} { height: string.unquote("#{$number}%"); }
     .#{$prefix}vh-#{$number} { height: string.unquote("#{$number}vh"); }
+    .#{$prefix}min-h-#{$number} { min-height: string.unquote("#{$number}%"); }
+    .#{$prefix}min-vh-#{$number} { min-height: string.unquote("#{$number}vh"); }
+    .#{$prefix}max-h-#{$number} { max-height: string.unquote("#{$number}%"); }
+    .#{$prefix}max-vh-#{$number} { max-height: string.unquote("#{$number}vh"); }
   }
 }
 
