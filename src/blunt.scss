@@ -115,13 +115,13 @@ html, body {
   .container { width: 90%; }
 }
 
-@media only screen and (min-width: 901px) and (max-width: 1200px) {
+@media only screen and (min-width: 901px) and (max-width: 1350px) {
   .container { width: 90%; }
   .md-hidden { display: none !important; }
   @include genCode('md-');
 }
 
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 1351px) {
   .lg-hidden { display: none !important; }
   .container { width: 90%; }
   @include genCode('lg-');
