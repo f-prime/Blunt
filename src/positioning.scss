@@ -3,7 +3,7 @@
 $positioning-max: 100;
 $positioning-number: 0;
 $positioning-decimal: 0;
-$positioning-decimal-inc: 5;
+$positioning-decimal-inc: 1;
 
 @mixin positioningGen($prefix, $number, $decimal) {
   @if($decimal > 0) {
