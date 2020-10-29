@@ -65,6 +65,8 @@ html, body {
     flex-direction: row;
   }
 
+  .#{$prefix}hidden { display: none !important; }
+
   .#{$prefix}h-start { justify-content: flex-start; }
   .#{$prefix}v-start { align-items: flex-start; }
   .#{$prefix}h-end { justify-content: flex-end; }
@@ -106,7 +108,6 @@ html, body {
 
 
 @media only screen and (max-width: 900px) {
-  .sm-hidden { display: none !important; }
   .container { width: 95% }
   @include genCode('sm-');
 }
@@ -117,12 +118,10 @@ html, body {
 
 @media only screen and (min-width: 901px) and (max-width: 1350px) {
   .container { width: 90%; }
-  .md-hidden { display: none !important; }
   @include genCode('md-');
 }
 
 @media only screen and (min-width: 1351px) {
-  .lg-hidden { display: none !important; }
   .container { width: 90%; }
   @include genCode('lg-');
 }
