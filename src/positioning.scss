@@ -7,15 +7,15 @@ $positioning-decimal-inc: 5;
 
 @mixin positioningGen($prefix, $number, $decimal) {
   @if($decimal > 0) {
-    .#{$prefix}top-#{$number}p#{$decimal} { top: string.unquote("#{$number}.#{$decimal}vh"); }
-    .#{$prefix}bottom-#{$number}p#{$decimal} { bottom: string.unquote("#{$number}.#{$decimal}vh"); }
-    .#{$prefix}left-#{$number}p#{$decimal} { left: string.unquote("#{$number}.#{$decimal}vw"); }
-    .#{$prefix}right-#{$number}p#{$decimal} { right: string.unquote("#{$number}.#{$decimal}vw"); }
+    .#{$prefix}top-#{$number}p#{$decimal} { top: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}bottom-#{$number}p#{$decimal} { bottom: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}left-#{$number}p#{$decimal} { left: string.unquote("#{$number}.#{$decimal}%"); }
+    .#{$prefix}right-#{$number}p#{$decimal} { right: string.unquote("#{$number}.#{$decimal}%"); }
   } @else {
-    .#{$prefix}top-#{$number} { top: #{$number}vh; }
-    .#{$prefix}bottom-#{$number} { bottom: #{$number}vh; }
-    .#{$prefix}left-#{$number} { left: #{$number}vw; }
-    .#{$prefix}right-#{$number} { right: #{$number}vw; }
+    .#{$prefix}top-#{$number} { top: string.unquote("#{$number}%"); }
+    .#{$prefix}bottom-#{$number} { bottom: string.unquote("#{$number}%"); }
+    .#{$prefix}left-#{$number} { left: string.unquote("#{$number}%"); }
+    .#{$prefix}right-#{$number} { right: string.unquote("#{$number}%"); }
   }
 }
 
