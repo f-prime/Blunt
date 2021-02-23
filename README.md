@@ -2,6 +2,8 @@
 
 [Join the Discord](https://discord.gg/EZJEwsP)
 
+Version: 1.1.0
+
 A CSS framework without all the fluff. 
 
 Blunt doesn't have any opinions on how your applications should look. It only provides helper classes to make positioning and responsive design easier.
@@ -179,7 +181,9 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-col` - `lg-col` will resolve to `width: 100%; display: flex; flex-direction: column;` for large screens
 
-`{size}-{v, h, align, justify}-{start, center, end, space-around, space-between}` - `lg-h-center` will center the row items horizontally on large screens 
+`{size}-{v, h, align, justify}-{start, center, end, inherit, initial, space-evenly, space-around, space-between}` - `lg-h-center` will center the row items horizontally on large screens 
+
+`{size}-{wrap, no-wrap, wrap-reverse, wrap-initial, wrap-inherit} - `sm-wrap` outputs `flex-wrap: wrap;` for small screens.
 
 `{size}-text-{center, left, right}` - `text-center` will center text
 

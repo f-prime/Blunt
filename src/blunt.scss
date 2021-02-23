@@ -1,3 +1,5 @@
+/* Blunt Version 1.1.0 */
+
 @use 'padding.scss' as padding;
 @use 'margin.scss' as margin;
 @use 'positioning.scss' as positioning;
@@ -79,15 +81,28 @@ html, body {
   .#{$prefix}v-space-around { align-items: space-around; }
 
   .#{$prefix}justify-start { justify-content: flex-start; }
-  .#{$prefix}align-start { align-items: flex-start; }
   .#{$prefix}justify-end { justify-content: flex-end; }
-  .#{$prefix}align-end { align-items: flex-end; }
-  .#{$prefix}align-center { align-items: center; }
   .#{$prefix}justify-center { justify-content: center; }
   .#{$prefix}justify-space-between { justify-content: space-between; }
   .#{$prefix}justify-space-around { justify-content: space-around; }
+  .#{$prefix}justify-space-evenly { justify-content: space-evenly; }
+  .#{$prefix}justify-initial { justify-content: initial; }
+  .#{$prefix}justify-inherit { justify-content: inherit; }
+
+  .#{$prefix}align-start { align-items: flex-start; }
+  .#{$prefix}align-end { align-items: flex-end; }
+  .#{$prefix}align-center { align-items: center; }
+  .#{$prefix}align-space-evenly { align-items: space-evenly; }
+  .#{$prefix}align-initial { align-items: initial; }
+  .#{$prefix}align-inherit { align-items: inherit; }
   .#{$prefix}align-space-between { align-items: space-between; }
   .#{$prefix}align-space-around { align-items: space-around; }
+
+  .#{$prefix}wrap { flex-wrap: wrap; }
+  .#{$prefix}no-wrap { flex-wrap: nowrap; }
+  .#{$prefix}wrap-reverse { flex-wrap: wrap-reverse; }
+  .#{$prefix}wrap-initail { flex-wrap: initial; }
+  .#{$prefix}wrap-inherit { flex-wrap: inherit; }
   
   @include padding.padding($prefix);
   @include padding.paddingPx($prefix);
@@ -105,7 +120,6 @@ html, body {
 }
 
 @include genCode(''); 
-
 
 @media only screen and (max-width: 900px) {
   .container { width: 95% }
