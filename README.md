@@ -183,7 +183,7 @@ Whole numbers do not use the `{number}p{fraction}` syntax. For a font size of `1
 
 `{size}-{v, h, align, justify}-{start, center, end, inherit, initial, space-evenly, space-around, space-between}` - `lg-h-center` will center the row items horizontally on large screens 
 
-`{size}-{wrap, no-wrap, wrap-reverse, wrap-initial, wrap-inherit} - `sm-wrap` outputs `flex-wrap: wrap;` for small screens.
+`{size}-{wrap, no-wrap, wrap-reverse, wrap-initial, wrap-inherit}` - `sm-wrap` outputs `flex-wrap: wrap;` for small screens.
 
 `{size}-text-{center, left, right}` - `text-center` will center text
 
