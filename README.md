@@ -46,6 +46,12 @@ Simply add the following line to your HTML file.
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/f-prime/blunt/dist/blunt.min.css">
 ```
 
+or install it through npm
+
+```
+npm install blunt-css
+```
+
 NOTE: Blunt is big at around 1mb minified. Along with standard gzip compression, it is highly suggested that in a production environment a tool like [purify-css](https://www.npmjs.com/package/purify-css) is used to minimize blunt as much as possible. There will be a noticable performance decrease if not.
 
 # Building the CSS
@@ -53,6 +59,11 @@ NOTE: Blunt is big at around 1mb minified. Along with standard gzip compression,
 Blunt is written in SCSS. To generate the CSS code clone the repo and run the following command:
 
 `sass src/blunt.scss blunt.css`
+
+or run
+
+`npm install`
+`npm run build`
 
 # Example
 

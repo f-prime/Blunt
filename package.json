@@ -1,0 +1,35 @@
+{
+  "name": "blunt-css",
+  "version": "1.1.0",
+  "description": "A CSS framework without all the fluff. Blunt doesn't have any opinions on how your applications should look. It only provides helper classes to make positioning and responsive design easier.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "compile": "sass ./src/blunt.scss ./dist/blunt.css",
+    "uglify": "uglifycss ./dist/blunt.css > ./blunt.min.css",
+    "build": "npm run compile; npm run uglify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f-prime/blunt.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "blunt",
+    "scss",
+    "sass"
+  ],
+  "author": "Frankie Primerano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/f-prime/blunt/issues"
+  },
+  "homepage": "https://github.com/f-prime/blunt#readme",
+  "dependencies": {
+    "sass": "^1.32.8",
+    "uglifycss": "^0.0.29"
+  }
+}
